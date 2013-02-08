@@ -1,7 +1,7 @@
-// Project 3 : WOrkganizer
+// Project 1 : WOrkganizer
 // Author: Esau Rubio
-// VFW 0113
-// 1/23/13
+// MIU 0213
+// 2/7/13
 
 // DOM Loaded
 window.addEventListener( "DOMContentLoaded" , function() {
@@ -10,8 +10,8 @@ window.addEventListener( "DOMContentLoaded" , function() {
         var element = document.getElementById(x);
         return element;
     }
-    
-    // Save Data
+
+    // Get Priority of the options
     function getPriority() {
         var radio = document.forms[0].priority;
         console.log(radio);
@@ -22,24 +22,27 @@ window.addEventListener( "DOMContentLoaded" , function() {
             }
         }
     }
+
+    // Save Data
     function storeData(key) {
         if (!key) {
-            var keyGen = Math.floor(Math.random()*1000000);
+            var d = new Date();
+                keyGen = d.getTime();
         } else {
             var keyGen = key;
         }
         getPriority ();
         var	userInput = {};
-            userInput.location = ["Location:" , ids("location").value];
-            userInput.worktype = ["Work Type:" , ids("worktype").value];
-            userInput.priority = ["Priority:" , priority ];
-            userInput.people   = ["Workers Sent:" , ids("people").value];
-            userInput.finishby = ["Finish By:" , ids("finishby").value];
-            userInput.notes    = ["Notes:" , ids("notes").value];
-            localStorage.setItem(keyGen , JSON.stringify(userInput));
-            alert("Job Saved!");
-            }
-	
+        userInput.location = ["Location:" , ids("location").value];
+        userInput.worktype = ["Work Type:" , ids("worktype").value];
+        userInput.priority = ["Priority:" , priority ];
+        userInput.people   = ["Workers Sent:" , ids("people").value];
+        userInput.finishby = ["Finish By:" , ids("finishby").value];
+        userInput.notes    = ["Notes:" , ids("notes").value];
+        localStorage.setItem(keyGen , JSON.stringify(userInput));
+        alert("Job Saved!");
+    }
+
     // Display Data
     function getData() {
         if (localStorage.length > 0 ) {
@@ -50,15 +53,15 @@ window.addEventListener( "DOMContentLoaded" , function() {
             ids('list').style.display = 'block';
             for(var i=0, l=localStorage.length; i<l; i++) {
                 var makeList = document.createElement('ul');
-                    makeLink = document.createElement('li');
-                    key = localStorage.key(i);
-                    value = localStorage.getItem(key);
-                    parsed = JSON.parse(value);
-                    makeBreak = document.createElement('br');
+                makeLink = document.createElement('li');
+                key = localStorage.key(i);
+                value = localStorage.getItem(key);
+                parsed = JSON.parse(value);
+                makeBreak = document.createElement('br');
                 imageGen(parsed.worktype[1] , makeList);
                 for(var n in parsed) {
                     var moreLi = document.createElement('li');
-                        text = parsed[n][0] + " " + parsed[n][1];
+                    text = parsed[n][0] + " " + parsed[n][1];
                     makeList.appendChild(moreLi);
                     moreLi.innerHTML = text;
                 }
@@ -86,35 +89,48 @@ window.addEventListener( "DOMContentLoaded" , function() {
     // Add generic Data
     function insertData() {
         for(var n in json) {
-            var keyGen = Math.floor(Math.random()*1000000);
+            var d = new Date();
+            var keyGen = d.getTime();
             localStorage.setItem(keyGen , JSON.stringify(json[n]));
+            pause(keyGen,d);
         }
         getData();
+    }
+
+    // Pause the function
+    function pause(keyGen , d) {
+        if (keyGen <= d.getTime()){
+            var newD = new Date();
+            keyGen = newD.getTime();
+            pause(keyGen,d);
+        } else {
+            return false
+        }
     }
 
     // Create Edit and Delete Links
     function editDeleteLinks(key , makeLink) {
         var edit = document.createElement('a');
-            edit.href = '#';
-            edit.key = key;
-            editText = "Edit Job";
+        edit.href = '#';
+        edit.key = key;
+        editText = "Edit Job";
         edit.addEventListener( 'click' , editor);
         edit.innerHTML = editText;
         makeLink.appendChild(edit);
-        
+
         var del = document.createElement('a');
-            del.href = '#';
-            del.key = key;
-            delText = "Delete Job";
+        del.href = '#';
+        del.key = key;
+        delText = "Delete Job";
         del.addEventListener( 'click' , deletor);
         del.innerHTML = delText;
         makeLink.appendChild(del);
     }
-    
+
     // Edit a chosen Job
     function editor() {
         var getInput = localStorage.getItem(this.key);
-            userInput = JSON.parse(getInput);
+        userInput = JSON.parse(getInput);
         switchControl("off");
         ids('location').value = userInput.location[1];
         ids('worktype').value = userInput.worktype[1];
@@ -136,7 +152,7 @@ window.addEventListener( "DOMContentLoaded" , function() {
         editSubmit.addEventListener('click' , validate);
         editSubmit.key = this.key;
     }
-    
+
     // Delete a chosen Job
     function deletor() {
         var ask = confirm('Are you Sure?');
@@ -148,33 +164,34 @@ window.addEventListener( "DOMContentLoaded" , function() {
             alert('Job NOT Deleted')
         }
     }
-    
+
     // Validate the user input
     function validate(e) {
         var errorArray = [];
-            getLocation = ids('location');
-            getWorktype = ids('worktype');
-            getFinishby = ids('finishby');
-            getNotes = ids('notes');
-            
+        getLocation = ids('location');
+        getWorktype = ids('worktype');
+        getFinishby = ids('finishby');
+        getNotes = ids('notes');
+
         // Reset
         errorMessage.innerHTML = '';
         getWorktype.style.border = '1px solid black';
         getLocation.style.border = '1px solid black';
         getFinishby.style.border = '1px solid black';
         getNotes.style.border = '1px solid black';
-        
-        // Work Type Validation
-        if (getWorktype.value==='-Maintenance-') {
-            var worktypeError = "Please choose a valid Work Type";
-            getWorktype.style.border = '1px solid red';
-            errorArray.push(worktypeError)
-        }
+
         // Location Validation
         if (getLocation.value === '') {
             var locationError = "Please choose a valid Location";
             getLocation.style.border = '1px solid red';
             errorArray.push(locationError)
+        }
+
+        // Work Type Validation
+        if (getWorktype.value==='--Maintenance--') {
+            var worktypeError = "Please choose a valid Work Type";
+            getWorktype.style.border = '1px solid red';
+            errorArray.push(worktypeError)
         }
         // Date validation
         var checkDate = /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/;
@@ -202,7 +219,7 @@ window.addEventListener( "DOMContentLoaded" , function() {
             storeData(this.key);
         }
     }
-    
+
     // Switch between Add Job and Display Jobs
     function switchControl(n) {
         switch(n) {
@@ -223,6 +240,7 @@ window.addEventListener( "DOMContentLoaded" , function() {
                 return false
         }
     }
+
     // Clear Data
     function clearData() {
         if (localStorage.length===0) {
@@ -241,28 +259,41 @@ window.addEventListener( "DOMContentLoaded" , function() {
     function addCat() {
         var selectForm = document.getElementsByTagName("form"),
             selectLi = ids("typeOfWork");
-        selection = document.createElement("select");
-        selection.setAttribute( "id" , "worktype" );
+            selection = document.createElement("select");
+            selection.setAttribute( "id" , "worktype" );
         for(var i=0, n=maintenanceTypes.length ; i<n ; i++ ) {
             var makeOption = document.createElement("option"),
                 text = maintenanceTypes[i];
-                makeOption.setAttribute("value", text);
-                makeOption.innerHTML = text;
-                selection.appendChild(makeOption);
+            makeOption.setAttribute("value", text);
+            makeOption.innerHTML = text;
+            selection.appendChild(makeOption);
         }
         selectLi.appendChild(selection)
     }
-	
+
+    // Get Featured Content
+    /*function featured(){
+        var div = document.getElementById('featured');
+        if (localStorage.length > 0) {
+            for(n in localStorage) {
+            }
+        } else {
+            var createText = document.createElement('p');
+            createText.innerHTML = 'No jobs to Display';
+            div.appendChild(createText);
+        }
+    }*/
+
     // Default Values
     var maintenanceTypes = [ "--Maintenance--", "Cleaning" , "Painting", "Electric" , "Plumbing"],
         priority;
-        errorMessage = ids('error');
-		
+    errorMessage = ids('error');
+    
     addCat();
     //Clear and Display Data
     var display = ids("display");
-        clear = ids("clear");
-        submit = ids("submit");
+    clear = ids("clear");
+    submit = ids("submit");
     display.addEventListener( "click" , getData );
     clear.addEventListener( "click" , clearData );
     submit.addEventListener( "click" , validate );

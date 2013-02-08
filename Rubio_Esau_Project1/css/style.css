@@ -1,5 +1,7 @@
 body {
-	background: #206999;
+	background-image: url('background.png');
+    margin-left: auto;
+    margin-right: auto;
 	width: 320px;
 	height: 548px;
 	font-family: arial, monospace;
@@ -27,34 +29,37 @@ nav {
 
 ul {
     font-family: arial , monospace;
-    background: #206999;
     list-style-type: none;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 5px;
 }
 
 div {
-    background: #998b65;
+    background: #206999;
     font-family: inherit;
     padding: 5px;
+    margin-top: 10px;
 }
 
 form {
-    background: #998b65;
-    padding: 10px 10px 10px 10px;
+    background: #206999;
+    padding-top: 5px
 }
 
 legend {
     margin-left: 10px;
     font-family: arial , monospace;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 fieldset {
-    background: #206999;
-}
-
-input {
-    background: #fffaee
+    border: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -62,4 +67,13 @@ a {
     font-weight: bolder;
     padding-right: 5px;
     text-align: center;
+}
+
+#submit {
+    width: 100%;
+    height: 44px;
+}
+
+#searchbox #searchbutton #browse {
+    display: inline;
 }
