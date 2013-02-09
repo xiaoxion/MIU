@@ -5,6 +5,7 @@
 
 // DOM Loaded
 window.addEventListener( "DOMContentLoaded" , function() {
+
     // Optimizations
     function ids(x) {
         var element = document.getElementById(x);
@@ -27,7 +28,7 @@ window.addEventListener( "DOMContentLoaded" , function() {
     function storeData(key) {
         if (!key) {
             var d = new Date();
-                keyGen = d.getTime();
+            keyGen = d.getTime();
         } else {
             var keyGen = key;
         }
@@ -259,8 +260,8 @@ window.addEventListener( "DOMContentLoaded" , function() {
     function addCat() {
         var selectForm = document.getElementsByTagName("form"),
             selectLi = ids("typeOfWork");
-            selection = document.createElement("select");
-            selection.setAttribute( "id" , "worktype" );
+        selection = document.createElement("select");
+        selection.setAttribute( "id" , "worktype" );
         for(var i=0, n=maintenanceTypes.length ; i<n ; i++ ) {
             var makeOption = document.createElement("option"),
                 text = maintenanceTypes[i];
@@ -273,22 +274,22 @@ window.addEventListener( "DOMContentLoaded" , function() {
 
     // Get Featured Content
     /*function featured(){
-        var div = document.getElementById('featured');
-        if (localStorage.length > 0) {
-            for(n in localStorage) {
-            }
-        } else {
-            var createText = document.createElement('p');
-            createText.innerHTML = 'No jobs to Display';
-            div.appendChild(createText);
-        }
-    }*/
+     var div = document.getElementById('featured');
+     if (localStorage.length > 0) {
+     for(n in localStorage) {
+     }
+     } else {
+     var createText = document.createElement('p');
+     createText.innerHTML = 'No jobs to Display';
+     div.appendChild(createText);
+     }
+     }*/
 
     // Default Values
     var maintenanceTypes = [ "--Maintenance--", "Cleaning" , "Painting", "Electric" , "Plumbing"],
         priority;
     errorMessage = ids('error');
-    
+
     addCat();
     //Clear and Display Data
     var display = ids("display");
