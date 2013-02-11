@@ -1,0 +1,93 @@
+.ui-body-a,
+.ui-overlay-a {
+    border: 1px solid 		#444 /*{a-body-border}*/;
+    background: 			#222 /*{a-body-background-color}*/;
+    color: 					#fff /*{a-body-color}*/;
+    text-shadow: 0 /*{a-body-shadow-x}*/ 1px /*{a-body-shadow-y}*/ 1px /*{a-body-shadow-radius}*/ #111 /*{a-body-shadow-color}*/;
+    font-weight: normal;
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #444 /*{a-body-background-start}*/), to( #222 /*{a-body-background-end}*/)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient( #444 /*{a-body-background-start}*/, #222 /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
+    background-image:    -moz-linear-gradient( #444 /*{a-body-background-start}*/, #222 /*{a-body-background-end}*/); /* FF3.6 */
+    background-image:     -ms-linear-gradient( #444 /*{a-body-background-start}*/, #222 /*{a-body-background-end}*/); /* IE10 */
+    background-image:      -o-linear-gradient( #444 /*{a-body-background-start}*/, #222 /*{a-body-background-end}*/); /* Opera 11.10+ */
+    background-image:         linear-gradient( #444 /*{a-body-background-start}*/, #222 /*{a-body-background-end}*/);
+}
+
+body {
+	background-image: url('background.png');
+    margin-left: auto;
+    margin-right: auto;
+	width: 320px;
+	font-family: arial, monospace;
+	font-size: 12px;
+    color: white;
+}
+
+h1 {
+    background: #E5A907;
+    text-align: center;
+    position: static;
+    color: #206999;
+}
+
+nav {
+    font-family: arial , fantasy;
+    font-weight: bold;
+    font-size: 14px;
+    background: #998b65;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    position: static;
+    margin-bottom: 10px; 
+}
+
+ul {
+    font-family: arial , monospace;
+    list-style-type: none;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+div {
+    background: #206999;
+    font-family: inherit;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+form {
+    background: #206999;
+    padding-top: 5px
+}
+
+legend {
+    margin-left: 10px;
+    font-family: arial , monospace;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    font-weight: bolder;
+    padding-right: 5px;
+    text-align: center;
+}
+
+#submit {
+    width: 100%;
+    height: 44px;
+}
+
+#searchbox #searchbutton #browse {
+    display: inline;
+}
