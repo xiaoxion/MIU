@@ -67,67 +67,139 @@ Term: 0213
                 <img style="margin-top: 10px; margin-bottom: 5px;" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/>
             </div>
             <div data-role="content">
+                <ul data-role="listview">
+                    <li>
+                        <a href="#lowp">
+                            <img src="img/lowp.png"/>
+                            <h3>Low Priority</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#medp">
+                            <img src="img/medp.png"/>
+                            <h3>Medium Priority</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#highp">
+                            <img src="img/highp.png"/>
+                            <h3>High Priority</h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed" data-id="mainfoot">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#newstream">Quick View</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Low Priority -->
+        <div data-role="page" id="lowp" data-add-back-btn="true">
+            <div data-role="header" style="text-align: center;" data-position="fixed" data-id="mainhead">
+                <img style="margin-top: 10px; margin-bottom: 5px;" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/>
+            </div>
+            <div data-role="content">
                 <div data-role="collapsible-set">
-                    <div data-role="collapsible">
-                        <h3>Low</h3>
-                        <ul data-role="listview">
-                            <li>
-                                <img src="img/Electric.png"/>
-                                <p>Location: Tampa</p>
-                                <p>Work Type: Electric</p>
-                                <p>Priority: Low</p>
-                                <p>Workers Sent: 1</p>
-                                <p>Finish By: 2013-03-12</p>
-                                <p>Notes: New line to extra room</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div data-role="collapsible">
-                        <h3>Medium</h3>
-                        <ul data-role="listview">
-                            <li>
-                                <img src="img/Painting.png"/>
-                                <p>Location: Tampa</p>
-                                <p>Work Type: Painting</p>
-                                <p>Priority: Medium</p>
-                                <p>Workers Sent: 2</p>
-                                <p>Finish By: 2013-02-21</p>
-                                <p>Notes: Bedroom: Moon Blue</p>
-                            </li>
-                            <li>
-                                <img src="img/Cleaning.png"/>
-                                <p>Location: Tampa</p>
-                                <p>Work Type: Cleaning</p>
-                                <p>Priority: Medium</p>
-                                <p>Workers Sent: 1</p>
-                                <p>Finish By: 2013-02-28</p>
-                                <p>Notes: Dirty Bathroom</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div data-role="collapsible">
-                        <h3>High</h3>
-                        <ul data-role="listview">
-                            <li>
+                    <h3>Low Priority</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <img src="img/Electric.png"/>
+                            <p>Location: Tampa</p>
+                            <p>Work Type: Electric</p>
+                            <p>Priority: Low</p>
+                            <p>Workers Sent: 1</p>
+                            <p>Finish By: 2013-03-12</p>
+                            <p>Notes: New line to extra room</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed" data-id="mainfoot">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#newstream">Quick View</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Medium Priority -->
+        <div data-role="page" id="medp" data-add-back-btn="true">
+            <div data-role="header" style="text-align: center;" data-position="fixed" data-id="mainhead">
+                <img style="margin-top: 10px; margin-bottom: 5px;" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/>
+            </div>
+            <div data-role="content">
+                <div data-role="collapsible-set">
+                    <h3>Medium Priority</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <img src="img/Painting.png"/>
+                            <p>Location: Tampa</p>
+                            <p>Work Type: Painting</p>
+                            <p>Priority: Medium</p>
+                            <p>Workers Sent: 2</p>
+                            <p>Finish By: 2013-02-21</p>
+                            <p>Notes: Bedroom: Moon Blue</p>
+                        </li>
+                        <li>
+                            <img src="img/Cleaning.png"/>
+                            <p>Location: Tampa</p>
+                            <p>Work Type: Cleaning</p>
+                            <p>Priority: Medium</p>
+                            <p>Workers Sent: 1</p>
+                            <p>Finish By: 2013-02-28</p>
+                            <p>Notes: Dirty Bathroom</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed" data-id="mainfoot">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#newstream">Quick View</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- High Priority -->
+        <div data-role="page" id="highp" data-add-back-btn="true">
+            <div data-role="header" style="text-align: center;" data-position="fixed" data-id="mainhead">
+                <img style="margin-top: 10px; margin-bottom: 5px;" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/>
+            </div>
+            <div data-role="content">
+                <div data-role="collapsible-set">
+                    <h3>High Priority</h3>
+                    <ul data-role="listview">
+                        <li>
                             <img src="img/Plumbing.png"/>
-                                <p>Location: Tampa</p>
-                                <p>Work Type: Plumbing</p>
-                                <p>Priority: High</p>
-                                <p>Workers Sent: 4</p>
-                                <p>Finish By: 2013-02-15</p>
-                                <p>Notes: Sink Exploded! Emergency!</p>
-                            </li>
-                            <li>
-                                <img src="img/Cleaning.png"/>
-                                <p>Location: Atlanta</p>
-                                <p>Work Type: Cleaning</p>
-                                <p>Priority: High</p>
-                                <p>Workers Sent: 3</p>
-                                <p>Finish By: 2013-02-24</p>
-                                <p>Notes: Full cleaning!</p>
-                            </li>
-                        </ul>
-                    </div>
+                            <p>Location: Tampa</p>
+                            <p>Work Type: Plumbing</p>
+                            <p>Priority: High</p>
+                            <p>Workers Sent: 4</p>
+                            <p>Finish By: 2013-02-15</p>
+                            <p>Notes: Sink Exploded! Emergency!</p>
+                        </li>
+                        <li>
+                            <img src="img/Cleaning.png"/>
+                            <p>Location: Atlanta</p>
+                            <p>Work Type: Cleaning</p>
+                            <p>Priority: High</p>
+                            <p>Workers Sent: 3</p>
+                            <p>Finish By: 2013-02-24</p>
+                            <p>Notes: Full cleaning!</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div data-role="footer" data-position="fixed" data-id="mainfoot">
@@ -212,73 +284,171 @@ Term: 0213
                 <img style="margin-top: 10px; margin-bottom: 5px;" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/>
             </div>
             <div data-role="content">
-                <div data-role="collapsible-set">
-                    <div data-role="collapsible">
-                        <h3>Cleaning</h3>
-                        <ul data-role="listview">
-                            <li>
+                <div class="ui-grid-a" style="text-align: center;">
+                    <div class="ui-block-a">
+                        <a href="#cleaning">
+                            <div class="ui-bar ui-bar-c">
                                 <img src="img/Cleaning.png"/>
-                                <p>Location: Tampa</p>
-                                <p>Work Type: Cleaning</p>
-                                <p>Priority: Medium</p>
-                                <p>Workers Sent: 1</p>
-                                <p>Finish By: 2013-02-28</p>
-                                <p>Notes: Dirty Bathroom</p>
-                            </li>
-                            <li>
-                                <img src="img/Cleaning.png"/>
-                                <p>Location: Atlanta</p>
-                                <p>Work Type: Cleaning</p>
-                                <p>Priority: High</p>
-                                <p>Workers Sent: 3</p>
-                                <p>Finish By: 2013-02-24</p>
-                                <p>Notes: Full cleaning!</p>
-                            </li>
-                        </ul>
+                                <p>Cleaning</p>
+                            </div>
+                        </a>
                     </div>
-                    <div data-role="collapsible">
-                        <h3>Electric</h3>
-                        <ul data-role="listview">
-                            <li>
+                    <div class="ui-block-b">
+                        <a href="#electric">
+                            <div class="ui-bar ui-bar-c">
                                 <img src="img/Electric.png"/>
-                                <p>Location: Tampa</p>
-                                <p>Work Type: Electric</p>
-                                <p>Priority: Low</p>
-                                <p>Workers Sent: 1</p>
-                                <p>Finish By: 2013-03-12</p>
-                                <p>Notes: New line to extra room</p>
-                            </li>
-                        </ul>
+                                <p>Electric</p>
+                            </div>
+                        </a>
                     </div>
-                    <div data-role="collapsible">
-                        <h3>Painting</h3>
-                        <ul data-role="listview">
-                            <li>
+                    <div class="ui-block-c">
+                        <a href="#painting">
+                            <div class="ui-bar ui-bar-c">
                                 <img src="img/Painting.png"/>
-                                <p>Location: Tampa</p>
-                                <p>Work Type: Painting</p>
-                                <p>Priority: Medium</p>
-                                <p>Workers Sent: 2</p>
-                                <p>Finish By: 2013-02-21</p>
-                                <p>Notes: Bedroom: Moon Blue</p>
-                            </li>
-                        </ul>
+                                <p>Painting</p>
+                            </div>
+                        </a>
                     </div>
-                    <div data-role="collapsible">
-                        <h3>Plumbing</h3>
-                        <ul data-role="listview">
-                            <li>
+                    <div class="ui-block-d">
+                        <a href="#plumbing">
+                            <div class="ui-bar ui-bar-c">
                                 <img src="img/Plumbing.png"/>
-                                <p>Location: Tampa</p>
-                                <p>Work Type: Plumbing</p>
-                                <p>Priority: High</p>
-                                <p>Workers Sent: 4</p>
-                                <p>Finish By: 2013-02-15</p>
-                                <p>Notes: Sink Exploded! Emergency!</p>
-                            </li>
-                        </ul>
+                                <p>Plumbing</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
+            </div>
+            <div data-role="footer" data-position="fixed" data-id="mainfoot">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#newstream">Quick View</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cleaning Work Type -->
+        <div data-role="page" id="cleaning" data-add-back-btn="true">
+            <div data-role="header" style="text-align: center;" data-position="fixed" data-id="mainhead">
+                <img style="margin-top: 10px; margin-bottom: 5px;" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/>
+            </div>
+            <div data-role="content">
+                <div data-role="collapsible-set">
+                    <h3>Cleaning</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <img src="img/Cleaning.png"/>
+                            <p>Location: Tampa</p>
+                            <p>Work Type: Cleaning</p>
+                            <p>Priority: Medium</p>
+                            <p>Workers Sent: 1</p>
+                            <p>Finish By: 2013-02-28</p>
+                            <p>Notes: Dirty Bathroom</p>
+                        </li>
+                        <li>
+                            <img src="img/Cleaning.png"/>
+                            <p>Location: Atlanta</p>
+                            <p>Work Type: Cleaning</p>
+                            <p>Priority: High</p>
+                            <p>Workers Sent: 3</p>
+                            <p>Finish By: 2013-02-24</p>
+                            <p>Notes: Full cleaning!</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed" data-id="mainfoot">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#newstream">Quick View</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Electric Work Type -->
+        <div data-role="page" id="electric" data-add-back-btn="true">
+            <div data-role="header" style="text-align: center;" data-position="fixed" data-id="mainhead">
+                <img style="margin-top: 10px; margin-bottom: 5px;" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/>
+            </div>
+            <div data-role="content">
+                    <h3>Electric</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <img src="img/Electric.png"/>
+                            <p>Location: Tampa</p>
+                            <p>Work Type: Electric</p>
+                            <p>Priority: Low</p>
+                            <p>Workers Sent: 1</p>
+                            <p>Finish By: 2013-03-12</p>
+                            <p>Notes: New line to extra room</p>
+                        </li>
+                    </ul>
+                </div>
+            <div data-role="footer" data-position="fixed" data-id="mainfoot">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#newstream">Quick View</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Painting Work Type -->
+        <div data-role="page" id="painting" data-add-back-btn="true">
+            <div data-role="header" style="text-align: center;" data-position="fixed" data-id="mainhead">
+                <img style="margin-top: 10px; margin-bottom: 5px;" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/>
+            </div>
+            <div data-role="content">
+                    <h3>Painting</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <img src="img/Painting.png"/>
+                            <p>Location: Tampa</p>
+                            <p>Work Type: Painting</p>
+                            <p>Priority: Medium</p>
+                            <p>Workers Sent: 2</p>
+                            <p>Finish By: 2013-02-21</p>
+                            <p>Notes: Bedroom: Moon Blue</p>
+                        </li>
+                    </ul>
+            </div>
+            <div data-role="footer" data-position="fixed" data-id="mainfoot">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#newstream">Quick View</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plumbing Work Type -->
+        <div data-role="page" id="plumbing" data-add-back-btn="true">
+            <div data-role="header" style="text-align: center;" data-position="fixed" data-id="mainhead">
+                <img style="margin-top: 10px; margin-bottom: 5px;" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/>
+            </div>
+            <div data-role="content">
+                    <h3>Plumbing</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <img src="img/Plumbing.png"/>
+                            <p>Location: Tampa</p>
+                            <p>Work Type: Plumbing</p>
+                            <p>Priority: High</p>
+                            <p>Workers Sent: 4</p>
+                            <p>Finish By: 2013-02-15</p>
+                            <p>Notes: Sink Exploded! Emergency!</p>
+                        </li>
+                    </ul>
             </div>
             <div data-role="footer" data-position="fixed" data-id="mainfoot">
                 <div data-role="navbar">
@@ -459,6 +629,5 @@ Term: 0213
                 </div>
             </div>
         </div> -->
-
     </body>
 </html>
