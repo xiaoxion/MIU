@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-Project 2: WOrkganize
+Project 3: WOrkganize
 Author: Esau Rubio
 Term: 0213
 -->
@@ -33,7 +33,7 @@ Term: 0213
                 <img style="margin-top: 10px; margin-bottom: 5px;" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/>
             </div>
             <div data-role="content">
-                <img src="img/CTA.png" style="width: 100%; margin-bottom: 20px;" onclick="window.location.assign('additem.html'); return false;"/>
+                <a href="#additem"><img src="img/CTA.png" style="width: 100%; margin-bottom: 20px;"/></a>
                 <br>
                 <div>
                     <ul data-inset="true" data-role="listview" role="listbox" data-filter="true">
@@ -301,7 +301,7 @@ Term: 0213
                             </div>
                         </a>
                     </div>
-                    <div class="ui-block-c">
+                    <div class="ui-block-a">
                         <a href="#painting">
                             <div class="ui-bar ui-bar-c">
                                 <img src="img/Painting.png"/>
@@ -309,7 +309,7 @@ Term: 0213
                             </div>
                         </a>
                     </div>
-                    <div class="ui-block-d">
+                    <div class="ui-block-b">
                         <a href="#plumbing">
                             <div class="ui-bar ui-bar-c">
                                 <img src="img/Plumbing.png"/>
@@ -606,17 +606,53 @@ Term: 0213
             </div>
         </div>
 
-        <!-- Add Item Page
-        <div data-role="page" id="additem">
+        <!-- Add Item Page -->
+        <div data-role="page" id="additem" data-add-back-btn="true">
             <div data-role="header" data-position="fixed">
                 <h1><img class="ui-btn-up" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/></h1>
-                <h1>Add Job!</h1>
             </div>
 
             <div data-role="content">
-                <a href="#additem" data-role="button" data-inline="true" id="clear" >Clear All Jobs</a>
-                <a href="#" data-role="button" data-inline="true" id="display" >Display Jobs</a>
-                <a href="#additem" data-role="button" data-inline="true" style="display:none" id="reload">Add Jobs</a>
+                <h1 style="text-align: center;">Add Job!</h1>
+                <fieldset class="ui-grid-a">
+                    <a href="#additem" data-inline="true" id="clear" ><div class="ui-block-a"><button>Clear All Jobs</button></div></a>
+                    <a href="#" data-inline="true" id="display" ><div class="ui-block-b"><button>Display Jobs</button></div></a>
+                    <a href="#additem" data-inline="true" style="display:none" id="reload"><div class="ui-block-b"><button>Add Jobs</button></div></a>
+                </fieldset>
+                <form action="#" method="post" id="mainform">
+                    <div data-role="fieldcontain">
+                        <label for="location">Where is job located?</label>
+                        <input type="text" name="location" id="location"/>
+                    </div>
+                    <div data-role="fieldcontain" id="typeOfWork">
+                        <label for="typeOfWork">What type of work is it?</label>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <legend>What is the Priority?</legend>
+                            <input type="radio" value="High" id="high" name="priority" /><label for="high">High</label>
+                            <input type="radio" checked value="Medium" id="medium" name="priority" /><label for="medium">Medium</label>
+                            <input type="radio" value="Low" id="low" name="priority" /><label for="low">Low</label>
+                        </fieldset>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="people">How many Worker(s) to send?</label>
+                        <input type="range" id="people" value="1" min="1" max="5" name="workersToSend" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="finishby">When to Finish?</label>
+                        <input type="date" name="finishBy" id="finishby" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="notes">Notes for Job</label>
+                        <textarea id="notes" placeholder="Put any important Job Information here!"></textarea>
+                    </div>
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a"><button type="submit" id="cancel">Cancel</button></div>
+                        <div class="ui-block-b"><button type="submit" id="submit" data-theme="b">Submit</button></div>
+                    </fieldset>
+                </form>
+
             </div>
 
             <div data-role="footer" data-position="fixed" data-id="mainfoot">
@@ -624,10 +660,10 @@ Term: 0213
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#additem">Add Job</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="#about">About</a></li>
                     </ul>
                 </div>
             </div>
-        </div> -->
+        </div>
     </body>
 </html>
