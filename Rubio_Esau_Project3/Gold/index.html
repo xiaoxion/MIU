@@ -18,9 +18,15 @@ Term: 0213
         <meta name="MobileOptimized" content="320"/>
 
         <!-- jQuery and jQuery Mobile Content -->
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+
+        <!-- jQuery Add-Ons -->
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/style.css"/>
 
         <!-- Page Title -->
         <title> WOrkganizer </title>
@@ -548,9 +554,9 @@ Term: 0213
                     <p>Our solution is <img src="img/fulllogo.png"/>. It's a simple, mobile, and efficient way to keep track of jobs for any type of business. It is endlessly customizable yet intuitively simple. It's our prefered way to keep track of our business and we hope it will help you too.</p>
                     <ul data-role="listview" data-inset="true">
                         <li data-role="list-divider">Important Links</li>
-                        <li><a href="https://github.com/xiaoxion/MIU/tree/master/Rubio_Esau_Project2">GitHub Link</a></li>
-                        <li><a href="http://xiaoxion.github.com/MIU/Rubio_Esau_Project2/Gold/">Gold App</a></li>
-                        <li><a href="http://xiaoxion.github.com/MIU/Rubio_Esau_Project2/Bronze/">Bronze App</a></li>
+                        <li><a href="https://github.com/xiaoxion/MIU/tree/master/Rubio_Esau_Project3">GitHub Link</a></li>
+                        <li><a href="http://xiaoxion.github.com/MIU/Rubio_Esau_Project3/Gold/">Gold App</a></li>
+                        <li><a href="http://xiaoxion.github.com/MIU/Rubio_Esau_Project3/Bronze/">Bronze App</a></li>
                         <li><a href="#home">Home</a></li>
                     </ul>
                     <br>
@@ -608,31 +614,31 @@ Term: 0213
 
         <!-- Add Item Page -->
         <div data-role="page" id="additem" data-add-back-btn="true">
-            <div data-role="header" data-position="fixed">
+            <div data-role="header" data-position="fixed" data-id="mainhead">
                 <h1><img class="ui-btn-up" onclick="window.location.assign('#home'); return false;" src="img/logo.png"/></h1>
             </div>
 
             <div data-role="content">
-                <h1 style="text-align: center;">Add Job!</h1>
+                <h2 style="text-align: center;">Add Job!</h2>
                 <fieldset class="ui-grid-a">
-                    <a href="#additem" data-inline="true" id="clear" ><div class="ui-block-a"><button>Clear All Jobs</button></div></a>
-                    <a href="#" data-inline="true" id="display" ><div class="ui-block-b"><button>Display Jobs</button></div></a>
+                    <a href="#additem" data-inline="true" id="clear" ><div class="ui-block-a"><button>Clear All</button></div></a>
+                    <a href="#" data-inline="true" id="display" ><div class="ui-block-b"><button>Display</button></div></a>
                     <a href="#additem" data-inline="true" style="display:none" id="reload"><div class="ui-block-b"><button>Add Jobs</button></div></a>
                 </fieldset>
-                <form action="#" method="post" id="mainform">
+                <form action="#" method="post" id="additemform">
                     <div data-role="fieldcontain">
-                        <label for="location">Where is job located?</label>
-                        <input type="text" name="location" id="location"/>
+                        <label for="location">Where is job located?<span style="color: red">*</span></label>
+                        <input type="text" name="location" id="location" class="required" autofocus="autofocus"/>
                     </div>
                     <div data-role="fieldcontain" id="typeOfWork">
-                        <label for="typeOfWork">What type of work is it?</label>
+                        <label for="worktype">What type of work is it?</label>
                     </div>
                     <div data-role="fieldcontain">
                         <fieldset data-role="controlgroup" data-type="horizontal">
                             <legend>What is the Priority?</legend>
-                            <input type="radio" value="High" id="high" name="priority" /><label for="high">High</label>
-                            <input type="radio" checked value="Medium" id="medium" name="priority" /><label for="medium">Medium</label>
                             <input type="radio" value="Low" id="low" name="priority" /><label for="low">Low</label>
+                            <input type="radio" checked value="Medium" id="medium" name="priority" /><label for="medium">Medium</label>
+                            <input type="radio" value="High" id="high" name="priority" /><label for="high">High</label>
                         </fieldset>
                     </div>
                     <div data-role="fieldcontain">
@@ -640,18 +646,39 @@ Term: 0213
                         <input type="range" id="people" value="1" min="1" max="5" name="workersToSend" />
                     </div>
                     <div data-role="fieldcontain">
-                        <label for="finishby">When to Finish?</label>
-                        <input type="date" name="finishBy" id="finishby" />
+                        <label for="finishby">When to Finish?<span style="color: red">*</span></label>
+                        <input type="date" name="finishby" id="finishby" class="required"/>
                     </div>
                     <div data-role="fieldcontain">
-                        <label for="notes">Notes for Job</label>
-                        <textarea id="notes" placeholder="Put any important Job Information here!"></textarea>
+                        <label for="notes">Additional Notes<span style="color: red">*</span></label>
+                        <textarea id="notes" name="notes" placeholder="Put any important Job Information here!" class="required"></textarea>
                     </div>
                     <fieldset class="ui-grid-a">
-                        <div class="ui-block-a"><button type="submit" id="cancel">Cancel</button></div>
-                        <div class="ui-block-b"><button type="submit" id="submit" data-theme="b">Submit</button></div>
+                        <div class="ui-block-a"><input type="reset" value="Cancel" id="cancel"/></div>
+                        <div class="ui-block-b"><input type="submit" value="Submit" id="submit" data-theme="b" /></div>
                     </fieldset>
                 </form>
+                <p style="color: red;">* These form fields are required!</p>
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-id="mainfoot">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#additem">Add Job</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Errors Dialog -->
+        <div data-role="dialog" id="errordialog">
+            <div data-role="header" data-position="fixed" data-id="mainhead">
+                <h1>Errors Found</h1>
+            </div>
+
+            <div data-role="content">
 
             </div>
 
@@ -665,5 +692,9 @@ Term: 0213
                 </div>
             </div>
         </div>
+
+        <!-- JavaScript -->
+        <script src="js/json.js" type="text/javascript"></script>
+        <script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>
