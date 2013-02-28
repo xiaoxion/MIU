@@ -17,6 +17,7 @@ $(document).ready(function(){
         selection = document.createElement("select");
         selection.setAttribute( "id" , "worktype" );
         selection.setAttribute("name" , "worktype");
+        selection.setAttribute("data-native-menu","false");
         for(var i=0, n=maintenanceTypes.length ; i<n ; i++ ) {
             var makeOption = document.createElement("option"),
                 text = maintenanceTypes[i];
@@ -33,7 +34,7 @@ $(document).ready(function(){
 $('#home').on('pageinit', function(){
 
 
-});	
+});
 
 $('#additem').on('pageinit', function(){
     var aiform = $('#additemform');
@@ -44,14 +45,14 @@ $('#additem').on('pageinit', function(){
             storeData(data);
         }
     });
-	//any other code needed for addItem page goes here
+    //any other code needed for addItem page goes here
 
 });
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
 var autofillData = function (){
-	 
+
 };
 
 var getData = function(){
@@ -71,15 +72,12 @@ var storeData = function(data){
     userInput.notes    = ["Notes:" , data[5].value ];
     localStorage.setItem(keyGen , JSON.stringify(userInput));
     alert("Job Saved!");
-}; 
+};
 
 var	deleteItem = function (){
-			
+
 };
-					
+
 var clearLocal = function(){
 
 };
-
-/*
-*/

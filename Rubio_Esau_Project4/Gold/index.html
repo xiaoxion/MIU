@@ -18,7 +18,9 @@ Term: 0213
         <meta name="MobileOptimized" content="320"/>
 
         <!-- jQuery and jQuery Mobile Content -->
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+        <link rel="stylesheet" href="css/themes/workganize.min.css" />
+        <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />-->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.structure.min.css" />
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
 
@@ -40,7 +42,6 @@ Term: 0213
             </div>
             <div data-role="content">
                 <a href="#additem"><img src="img/CTA.png" style="width: 100%; margin-bottom: 20px;"/></a>
-                <br>
                 <div>
                     <ul data-inset="true" data-role="listview" role="listbox" data-filter="true">
                         <li data-role="list-divider">Browse</li>
@@ -628,7 +629,7 @@ Term: 0213
                 <form action="#" method="post" id="additemform">
                     <div data-role="fieldcontain">
                         <label for="location">Where is job located?<span style="color: red">*</span></label>
-                        <input type="text" name="location" id="location" class="required" autofocus="autofocus"/>
+                        <input type="text" name="location" id="location" class="required" autofocus="autofocus" placeholder="Tampa, FL or Hidden Colony Apt"/>
                     </div>
                     <div data-role="fieldcontain" id="typeOfWork">
                         <label for="worktype">What type of work is it?</label>
@@ -653,10 +654,8 @@ Term: 0213
                         <label for="notes">Additional Notes<span style="color: red">*</span></label>
                         <textarea id="notes" name="notes" placeholder="Put any important Job Information here!" class="required"></textarea>
                     </div>
-                    <fieldset class="ui-grid-a">
-                        <div class="ui-block-a"><input type="reset" value="Cancel" id="cancel"/></div>
-                        <div class="ui-block-b"><input type="submit" value="Submit" id="submit" data-theme="b" /></div>
-                    </fieldset>
+                    <input type="submit" value="Submit" id="submit" data-theme="d" />
+                    <input type="reset" value="Cancel" id="cancel"/>
                 </form>
                 <p style="color: red;">* These form fields are required!</p>
             </div>
